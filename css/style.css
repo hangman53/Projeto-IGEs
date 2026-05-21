@@ -514,6 +514,189 @@ img {
   text-align: justify;
 }
 
+/*login*/
+.divLogin {
+  max-width: 380px;
+  margin-top: 5%;
+  margin-left: 10%;
+  padding: 24px;
+  background-color: var(--rosa-claro);
+  border-radius: var(--raio-borda);
+  box-shadow: var(--sombra-card);
+}
+
+.divLogin form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLogin input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--borda-card);
+  border-radius: var(--raio-borda);
+  font-size: 0.95rem;
+}
+
+.formLogin label {
+  display: block;
+  margin: 0;
+  font-weight: 600;
+  text-align: left;
+}
+
+.formLogin_checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.formLogin_checkbox .checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formLogin_checkbox label {
+  margin: 0;
+  font-weight: 500;
+}
+
+.formLogin_checkbox a {
+  display: block;
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: var(--vinho);
+  transition: color 0.2s;
+}
+
+.formLogin_checkbox a:hover {
+  color: var(--rosa-escuro);
+}
+
+#botaoLogin {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--vinho);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: var(--raio-borda);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#botaoLogin:hover {
+  background-color: var(--rosa-escuro);
+}
+
+
+/*iges*/
+.conteudo-principal {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Coluna da Esquerda: Card de Texto */
+.card-texto {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-texto h1 {
+  color: #555555;
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.card-texto p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.card-texto p:last-child {
+  margin-bottom: 0;
+}
+
+/* Coluna da Direita: Imagem e Download */
+.coluna-midia {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Container da Imagem (Box Cinza do Print) */
+.container-imagem {
+  width: 100%;
+  max-width: 450px;
+  height: 350px;
+  background-color: #dbdbdb;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-layout {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Botão de Download */
+.btn-download {
+  display: inline-block;
+  background-color: #b5497a; /* Rosa/Vinho do botão */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 12px 60px;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(181, 73, 122, 0.3);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-download:hover {
+  background-color: #943460;
+  transform: translateY(-2px);
+}
+
+/* Responsividade para Telas Menores (Celulares/Tablets) */
+@media (max-width: 768px) {
+  .conteudo-principal {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px auto;
+  }
+  
+  .container-imagem {
+    height: 250px;
+  }
+}
+
 /* Footer */
 .rodape {
   background-color: var(--vinho);
