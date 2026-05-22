@@ -1,3 +1,4 @@
+
 inicializarUsuariosMockados();
 
 const inputSenha = document.getElementById('passwordLogin');
@@ -39,7 +40,7 @@ function validarLogin(emailProcurado, senhaProcurada) {
     console.log(`Buscando por E-mail: "${emailProcurado}" e Senha: "${senhaProcurada}"`);
     const usuarioEncontrado = listaUsuarios.find(user => {
         return user.email.trim() === emailProcurado.trim() &&
-               String(user.senha).trim() === String(senhaProcurada).trim();
+            String(user.senha).trim() === String(senhaProcurada).trim();
     });
 
     console.log("Resultado da busca interna:", usuarioEncontrado);
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const usuarioLogadoDiv = document.getElementById("usuario-logado");
     const nomeUsuarioHeader = document.getElementById("nomeUsuarioHeader");
     const fotoUsuarioHeader = document.getElementById("fotoUsuarioHeader");
-    
+
     const btnAvatarMenu = document.getElementById("btnAvatarMenu");
     const dropdownUsuario = document.getElementById("dropdownUsuario");
     const btnSair = document.getElementById("btnSair");
@@ -79,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
 
     if (usuario) {
-        if(visitanteLinks) visitanteLinks.style.display = "none";
-        if(usuarioLogadoDiv) usuarioLogadoDiv.style.display = "flex";
-        
-        if(nomeUsuarioHeader) nomeUsuarioHeader.textContent = usuario.nome;
-        if(fotoUsuarioHeader && usuario.foto) fotoUsuarioHeader.src = usuario.foto;
+        if (visitanteLinks) visitanteLinks.style.display = "none";
+        if (usuarioLogadoDiv) usuarioLogadoDiv.style.display = "flex";
+
+        if (nomeUsuarioHeader) nomeUsuarioHeader.textContent = usuario.nome;
+        if (fotoUsuarioHeader && usuario.foto) fotoUsuarioHeader.src = usuario.foto;
     } else {
-        if(visitanteLinks) visitanteLinks.style.display = "flex";
-        if(usuarioLogadoDiv) usuarioLogadoDiv.style.display = "none";
+        if (visitanteLinks) visitanteLinks.style.display = "flex";
+        if (usuarioLogadoDiv) usuarioLogadoDiv.style.display = "none";
     }
 
     if (btnAvatarMenu) {
@@ -113,14 +114,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const cadastrobotão = document.getElementById('botaoCadastro');
 
-cadastrobotão.addEventListener('click', function(event) {
-    event.preventDefault();
+cadastrobotão.addEventListener('click', function (event) {
 
     var nome = document.getElementById('usernameCadastro').value;
+
     var email = document.getElementById('emailCadastro').value;
     var senha = document.getElementById('passwordCadastro').value;
-    var confirmacaoSenha = document.getElementById('confirmPasswordCadastro').value;
-    var mensagemErro = document.getElementById('erro-confirmacao-senha');
+    var confirmacaoSenha = document.getElementById('passwordConfirm').value;
+    var mensagemErro = document.getElementById('erro-senha-confirm');
+    event.preventDefault();
+
+
+
+
+
 
     if (senha !== confirmacaoSenha) {
         mensagemErro.style.display = 'block';
@@ -143,12 +150,20 @@ cadastrobotão.addEventListener('click', function(event) {
             role: "usuario"
         };
 
+        console.log("Novo usuário a ser cadastrado:", novoUsuario);
+        var tamanhoAntes = listaUsuarios.length;
         listaUsuarios.push(novoUsuario);
+        var tamanhoDepois = listaUsuarios.length;
+        if (tamanhoDepois === tamanhoAntes + 1) {
 
-        localStorage.setItem('usuarios_mock', JSON.stringify(listaUsuarios));
+            localStorage.setItem('usuarios_mock', JSON.stringify(listaUsuarios));
 
-        alert('Cadastro realizado com sucesso! Agora você pode fazer o login.');
-        window.location.href = "login.html";
+            alert('Cadastro realizado com sucesso! Agora você pode fazer o login. lsitando usuários:', listaUsuarios);
+            window.location.href = "login.html";
+        } else {
+            alert('Ocorreu um erro ao cadastrar. Por favor, tente novamente.listando usuários:', listaUsuarios, "novo usuário:", novoUsuario);
+        }
     }
-});
+})
+    ;
 
