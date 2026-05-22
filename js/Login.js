@@ -1,4 +1,3 @@
-
 inicializarUsuariosMockados();
 
 const inputSenha = document.getElementById('passwordLogin');
@@ -46,6 +45,7 @@ function validarLogin(emailProcurado, senhaProcurada) {
     console.log("Resultado da busca interna:", usuarioEncontrado);
 
     if (usuarioEncontrado) {
+        localStorage.setItem('usuarioLogado', JSON.stringify({ nome: usuarioEncontrado.username, foto: "../img/icone-membro.png" }));
         alert(`Login realizado com sucesso! Bem-vindo, ${usuarioEncontrado.username}.`);
         window.location.href = "index.html";
     } else {
@@ -66,4 +66,89 @@ function inicializarUsuariosMockados() {
     }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const visitanteLinks = document.getElementById("visitante-links");
+    const usuarioLogadoDiv = document.getElementById("usuario-logado");
+    const nomeUsuarioHeader = document.getElementById("nomeUsuarioHeader");
+    const fotoUsuarioHeader = document.getElementById("fotoUsuarioHeader");
+    
+    const btnAvatarMenu = document.getElementById("btnAvatarMenu");
+    const dropdownUsuario = document.getElementById("dropdownUsuario");
+    const btnSair = document.getElementById("btnSair");
+
+    const usuario = JSON.parse(localStorage.getItem("usuarioLogado"));
+
+    if (usuario) {
+        if(visitanteLinks) visitanteLinks.style.display = "none";
+        if(usuarioLogadoDiv) usuarioLogadoDiv.style.display = "flex";
+        
+        if(nomeUsuarioHeader) nomeUsuarioHeader.textContent = usuario.nome;
+        if(fotoUsuarioHeader && usuario.foto) fotoUsuarioHeader.src = usuario.foto;
+    } else {
+        if(visitanteLinks) visitanteLinks.style.display = "flex";
+        if(usuarioLogadoDiv) usuarioLogadoDiv.style.display = "none";
+    }
+
+    if (btnAvatarMenu) {
+        btnAvatarMenu.addEventListener("click", function (e) {
+            e.stopPropagation();
+            dropdownUsuario.classList.toggle("show");
+        });
+    }
+
+    window.addEventListener("click", function () {
+        if (dropdownUsuario && dropdownUsuario.classList.contains("show")) {
+            dropdownUsuario.classList.remove("show");
+        }
+    });
+
+    if (btnSair) {
+        btnSair.addEventListener("click", function () {
+            localStorage.removeItem("usuarioLogado");
+            window.location.href = "index.html";
+        });
+    }
+});
+
+
+const cadastrobotão = document.getElementById('botaoCadastro');
+
+cadastrobotão.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    var nome = document.getElementById('usernameCadastro').value;
+    var email = document.getElementById('emailCadastro').value;
+    var senha = document.getElementById('passwordCadastro').value;
+    var confirmacaoSenha = document.getElementById('confirmPasswordCadastro').value;
+    var mensagemErro = document.getElementById('erro-confirmacao-senha');
+
+    if (senha !== confirmacaoSenha) {
+        mensagemErro.style.display = 'block';
+        return;
+    } else {
+        mensagemErro.style.display = 'none';
+
+        var listaUsuarios = JSON.parse(localStorage.getItem('usuarios_mock')) || [];
+
+        var emailExiste = listaUsuarios.some(user => user.email.trim() === email.trim());
+        if (emailExiste) {
+            alert('Este e-mail já está cadastrado!');
+            return;
+        }
+
+        var novoUsuario = {
+            username: nome,
+            email: email,
+            senha: senha,
+            role: "usuario"
+        };
+
+        listaUsuarios.push(novoUsuario);
+
+        localStorage.setItem('usuarios_mock', JSON.stringify(listaUsuarios));
+
+        alert('Cadastro realizado com sucesso! Agora você pode fazer o login.');
+        window.location.href = "login.html";
+    }
+});
 

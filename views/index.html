@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>iGES — Entendendo a Governança dos Serviços de Esgotamento Sanitário</title>
   <link rel="stylesheet" href="../css/style.css" />
 </head>
+
 <body>
 
   <!-- Cabecalho -->
@@ -33,10 +35,30 @@
       </nav>
 
       <div class="nav-acoes">
-        <a href="login.html" class="btn-login">Fazer Login</a>
-        <a href="cadastro.html" class="btn-cadastro">Cadastre-se</a>
-      </div>
+                
+                <div id="visitante-links" class="grupo-acoes">
+                    <a href="login.html" class="btn-login">Fazer Login</a>
+                    <a href="cadastro.html" class="btn-cadastro">Cadastre-se</a>
+                </div>
 
+                <div id="usuario-logado" class="grupo-acoes" style="display: none;">
+                    <div class="usuario-dropdown">
+                        <button class="btn-avatar" id="btnAvatarMenu">
+                            <img src="../img/default-avatar.png" alt="Foto do Usuário" class="avatar-img" id="fotoUsuarioHeader">
+                        </button>
+                        <div class="menu-dropdown-user" id="dropdownUsuario">
+                            <div class="dropdown-header">
+                                <span id="nomeUsuarioHeader">Nome do Usuário</span>
+                            </div>
+                            <hr>
+                            <a href="dashboard.html">Página do Usuário</a>
+                            <hr>
+                            <button id="btnSair" class="btn-logout">Sair</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
     </div>
   </header>
 
@@ -45,7 +67,8 @@
 
     <div class="topo-pagina-inicial">
       <h1>Entendendo a Governança dos Serviços de Esgotamento Sanitário</h1>
-      <p>Saiba mais sobre o conceito de Governança dos Serviços de Esgotamento Sanitário, o Índice iGES e os níveis de enquadramento</p>
+      <p>Saiba mais sobre o conceito de Governança dos Serviços de Esgotamento Sanitário, o Índice iGES e os níveis de
+        enquadramento</p>
     </div>
 
     <!-- Cards com a definição de tudo -->
@@ -56,7 +79,8 @@
           <img src="../img/icone-governanca.png" alt="Governança" />
         </div>
         <h3>O que é Governança?</h3>
-        <p>Governança é o conjunto de práticas, regras e processos que orientam como uma organização é dirigida, monitorada e avaliada, garantindo decisões mais eficientes, transparentes e responsáveis.</p>
+        <p>Governança é o conjunto de práticas, regras e processos que orientam como uma organização é dirigida,
+          monitorada e avaliada, garantindo decisões mais eficientes, transparentes e responsáveis.</p>
         <a href="governanca.html" class="btn-saiba-mais">Saiba Mais</a>
       </div>
 
@@ -65,7 +89,8 @@
           <img src="../img/icone-iGES.png" alt="iGES" />
         </div>
         <h3>O que é Índice iGES?</h3>
-        <p>O iGES é um índice que mede o nível de governança de uma organização, utilizando critérios e indicadores que permitem avaliar a qualidade da gestão de forma estruturada e comparável.</p>
+        <p>O iGES é um índice que mede o nível de governança de uma organização, utilizando critérios e indicadores que
+          permitem avaliar a qualidade da gestão de forma estruturada e comparável.</p>
         <a href="indiceiges.html" class="btn-saiba-mais">Saiba Mais</a>
       </div>
 
@@ -74,7 +99,8 @@
           <img src="../img/icone-enquadramento.png" alt="Enquadramento" />
         </div>
         <h3>O que é Enquadramento?</h3>
-        <p>O enquadramento é o processo de classificar e organizar informações de acordo com critérios definidos, facilitando a análise e a comparação dos dados utilizados na avaliação da governança.</p>
+        <p>O enquadramento é o processo de classificar e organizar informações de acordo com critérios definidos,
+          facilitando a análise e a comparação dos dados utilizados na avaliação da governança.</p>
         <a href="enquadramento.html" class="btn-saiba-mais">Saiba Mais</a>
       </div>
 
@@ -108,9 +134,9 @@
       </div>
 
       <div class="rodape-logos">
-        <img src="../img/logo-ufsc.png" alt="UFSC" />       
+        <img src="../img/logo-ufsc.png" alt="UFSC" />
         <img src="../img/logo-ppgea.png" alt="PPGEA UFSC" />
-        <img src="../img/logo-gesad.png" alt="GESAD" />      
+        <img src="../img/logo-gesad.png" alt="GESAD" />
         <img src="../img/logo-lequia.png" alt="Lequia UdG" />
       </div>
 
@@ -119,4 +145,5 @@
 
   <script src="../js/scripts.js"></script>
 </body>
+
 </html>

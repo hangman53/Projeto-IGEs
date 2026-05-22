@@ -15,7 +15,7 @@
             </a>
 
             <nav class="nav-principal">
-                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html" class="nav-link ativo">Home</a>
 
                 <div class="nav-item-dropdown">
                     <button class="nav-link btn-dropdown">Definições</button>
@@ -26,15 +26,35 @@
                     </div>
                 </div>
 
-                <a href="iges.html" class="nav-link ativo">iGES</a>
+                <a href="iges.html" class="nav-link">iGES</a>
                 <a href="equipe.html" class="nav-link">Sobre a Equipe</a>
             </nav>
 
             <div class="nav-acoes">
-                <a href="login.html" class="btn-login">Fazer Login</a>
-                <a href="cadastro.html" class="btn-cadastro">Cadastre-se</a>
-            </div>
+                
+                <div id="visitante-links" class="grupo-acoes">
+                    <a href="login.html" class="btn-login">Fazer Login</a>
+                    <a href="cadastro.html" class="btn-cadastro">Cadastre-se</a>
+                </div>
 
+                <div id="usuario-logado" class="grupo-acoes" style="display: none;">
+                    <div class="usuario-dropdown">
+                        <button class="btn-avatar" id="btnAvatarMenu">
+                            <img src="../img/default-avatar.png" alt="Foto do Usuário" class="avatar-img" id="fotoUsuarioHeader">
+                        </button>
+                        <div class="menu-dropdown-user" id="dropdownUsuario">
+                            <div class="dropdown-header">
+                                <span id="nomeUsuarioHeader">Nome do Usuário</span>
+                            </div>
+                            <hr>
+                            <a href="dashboard.html">Página do Usuário</a>
+                            <hr>
+                            <button id="btnSair" class="btn-logout">Sair</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </header>
     <main class="conteudo-principal">
