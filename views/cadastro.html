@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho-interno">
+
+            <a href="index.html" class="logo-link">
+                <img src="../img/logo.png" alt="iGES" class="logo-imagem" />
+            </a>
+
+            <nav class="nav-principal">
+                <a href="index.html" class="nav-link ativo">Home</a>
+
+                <div class="nav-item-dropdown">
+                    <button class="nav-link btn-dropdown">Definições</button>
+                    <div class="menu-dropdown">
+                        <a href="governanca.html">Governança</a>
+                        <a href="enquadramento.html">Enquadramento</a>
+                        <a href="indice.html">Índice iGES</a>
+                    </div>
+                </div>
+
+                <a href="iges.html" class="nav-link">iGES</a>
+                <a href="equipe.html" class="nav-link">Sobre a Equipe</a>
+            </nav>
+
+            <div class="nav-acoes">
+                <a href="login.html" class="btn-login">Fazer Login</a>
+                <a href="cadastro.html" class="btn-cadastro">Cadastre-se</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <div class="divCadastro">
+            <form>
+                <section class="formCadastro">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" id="usernameCadastro" required>
+                    <p id="erro-login" style="color: red; display: none; margin-bottom: 8px;">O usuário deve conter '@' </p>
+                </section>
+
+                <section class="formCadastro">
+                    <label for="emailCadastro">E-mail</label>
+                    <input type="email" id="emailCadastro" required>
+                    <p id="erro-email" style="color: red; display: none; margin-bottom: 8px;">Informe um e-mail válido.</p>
+                </section>
+
+                <section class="formCadastro">
+                    <label for="passwordCadastro">Senha</label>
+                    <input type="password" id="passwordCadastro" required>
+                    <p id="erro-senha" style="color: red; display: none; margin-bottom: 8px;">A senha deve ter pelo menos 8 caracteres.</p>
+                </section>
+
+                <section class="formCadastro">
+                    <label for="passwordConfirm">Confirmar Senha</label>
+                    <input type="password" id="passwordConfirm" required>
+                    <p id="erro-senha-confirm" style="color: red; display: none; margin-bottom: 8px;">As senhas não coincidem.</p>
+                </section>
+
+                <section class="formLogin_checkbox">
+                    <a href="login.html">Já tem uma conta? Faça login</a>
+                </section>
+                <button type="submit" id="botaoCadastro">Cadastrar</button>
+            </form>
+        </div>   
+    </main>
+
+    <script src="../js/Login.js"></script>
+</body>
+
+</html> 
