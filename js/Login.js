@@ -124,11 +124,6 @@ cadastrobotão.addEventListener('click', function (event) {
     var mensagemErro = document.getElementById('erro-senha-confirm');
     event.preventDefault();
 
-
-
-
-
-
     if (senha !== confirmacaoSenha) {
         mensagemErro.style.display = 'block';
         return;
@@ -164,6 +159,5 @@ cadastrobotão.addEventListener('click', function (event) {
             alert('Ocorreu um erro ao cadastrar. Por favor, tente novamente.listando usuários:', listaUsuarios, "novo usuário:", novoUsuario);
         }
     }
-})
-    ;
+});
 
